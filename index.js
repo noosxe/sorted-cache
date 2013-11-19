@@ -9,6 +9,13 @@ module.exports = (function() {
   };
 
   Cache.prototype.add = function(item) {
+    if (_.isArray(item)) {
+      _.forEach(item, function(val) {
+        this.add(val);
+      }, this);
+      return;
+    }
+
     if (this.values.length === 0 || !this.options.callback) {
       this.values.push(item);
       return;
