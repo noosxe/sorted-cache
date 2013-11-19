@@ -1,0 +1,19 @@
+{
+  "name": "sorted-cache",
+  "version": "0.1.0",
+  "description": "Array in memory cache with sorting abilities",
+  "author": "Levon Kirakosyan <noosx.e@gmail.com",
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "2.3.x"
+  },
+  "keywords": [
+    "cache",
+    "sort"
+  ],
+  "respository": {
+    "type": "git",
+    "url": "https://github.com/noosxe/sorted-cache.git"
+  }
+}
