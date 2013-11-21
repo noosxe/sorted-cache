@@ -6,8 +6,9 @@
       callback: function(ob1, ob2) {
         return ob1 > ob2;
       },
-      comparator: function(a, b) {
-        return a - b;
+      value: function(a) {
+        console.log(a);
+        return a;
       }
     });
 
@@ -19,6 +20,5 @@
 
   console.log(cache.values);
   console.log(cache.range(4, 4));
-
   console.log(cache.until(34, 4));
 }());

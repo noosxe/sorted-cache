@@ -59,9 +59,10 @@ module.exports = (function() {
   };
 
   Cache.prototype.until = function(key, count) {
-    var bs = require('binary-search')
-      , pos = bs(this.values, key, this.options.comparator);
-    return pos >= 0 ? this.values.slice(pos, pos + count) : 0;
+    var pos = _.findIndex(this.values, function(obj) {
+      return this.options.value(obj) == key;
+    }, this);
+    return pos >= 0 ? this.values.slice(pos, pos + count) : [];
   };
 
   Cache.prototype.length = function() {

@@ -1,13 +1,12 @@
 {
   "name": "sorted-cache",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Array in memory cache with sorting abilities",
   "author": "Levon Kirakosyan <noosx.e@gmail.com",
   "license": "MIT",
   "main": "index.js",
   "dependencies": {
-    "lodash": "2.3.x",
-    "binary-search": "1.1.x"
+    "lodash": "2.3.x"
   },
   "keywords": [
     "cache",
