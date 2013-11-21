@@ -15,5 +15,6 @@
   cache.add([4, 342, 34, 542]);
 
   console.log(cache.values);
+  console.log(cache.range(4, 4));
 
 }());

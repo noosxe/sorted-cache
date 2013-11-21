@@ -49,6 +49,8 @@ module.exports = (function() {
   };
 
   Cache.prototype.range = function(begin, count) {
+    begin = Math.max(begin, 0);
+    count = Math.max(count, 0);
     return this.values.slice(begin, begin + count);
   };
 
