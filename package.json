@@ -1,6 +1,6 @@
 {
   "name": "sorted-cache",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Array in memory cache with sorting abilities",
   "author": "Levon Kirakosyan <noosx.e@gmail.com",
   "license": "MIT",

@@ -58,10 +58,14 @@ module.exports = (function() {
     return this.values.slice(begin, begin + count);
   };
 
-  Cache.prototype.until = function(key, count) {
-    var pos = _.findIndex(this.values, function(obj) {
+  Cache.prototype.keyIndex = function(key) {
+    return _.findIndex(this.values, function(obj) {
       return this.options.value(obj) == key;
     }, this);
+  };
+
+  Cache.prototype.until = function(key, count) {
+    var pos = this.keyIndex(key);
     return pos >= 0 ? this.values.slice(pos, pos + count) : [];
   };
 
