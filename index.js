@@ -44,6 +44,10 @@ module.exports = (function() {
     }
   };
 
+  Cache.prototype.empty = function() {
+    this.values.length = 0;
+  };
+
   Cache.prototype.get = function(index) {
     return index < this.values.length ? this.values[index] : null;
   };
@@ -52,6 +56,12 @@ module.exports = (function() {
     begin = Math.max(begin, 0);
     count = Math.max(count, 0);
     return this.values.slice(begin, begin + count);
+  };
+
+  Cache.prototype.until = function(key, count) {
+    var bs = require('binary-search')
+      , pos = bs(this.values, key, this.options.comparator);
+    return pos >= 0 ? this.values.slice(pos, pos + count) : 0;
   };
 
   Cache.prototype.length = function() {
