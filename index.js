@@ -8,8 +8,10 @@ module.exports = (function() {
     this.options = options;
   };
 
-  Cache.prototype.add = function(item) {
-    if (_.isArray(item)) {
+  Cache.prototype.add = function(item, merge) {
+    merge = merge || false;
+
+    if (_.isArray(item) && merge) {
       _.forEach(item, function(val) {
         this.add(val);
       }, this);
